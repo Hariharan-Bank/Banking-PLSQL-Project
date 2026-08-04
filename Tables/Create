@@ -1,1 +1,24 @@
-tables
+
+CREATE TABLE bank_accounts (
+  acc_no    NUMBER PRIMARY KEY,
+  acc_name  VARCHAR2(100),
+  balance   NUMBER,
+  acc_type  VARCHAR2(20),
+  status    VARCHAR2(10)
+);
+
+CREATE TABLE transactions (
+  txn_id    NUMBER PRIMARY KEY,
+  acc_no    NUMBER,
+  txn_type  VARCHAR2(10),
+  amount    NUMBER,
+  txn_date  DATE
+);
+
+CREATE TABLE balance_log (
+  log_id      NUMBER PRIMARY KEY,
+  acc_no      NUMBER,
+  old_balance NUMBER,
+  new_balance NUMBER,
+  updated_on  DATE
+);
