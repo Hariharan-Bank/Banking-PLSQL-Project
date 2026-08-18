@@ -1,24 +1,98 @@
-
-CREATE TABLE bank_accounts (
-  acc_no    NUMBER PRIMARY KEY,
-  acc_name  VARCHAR2(100),
-  balance   NUMBER,
-  acc_type  VARCHAR2(20),
-  status    VARCHAR2(10)
+-- 1. Customers table
+CREATE TABLE customers (
+  customer_id  NUMBER PRIMARY KEY,
+  first_name   VARCHAR2(50),
+  last_name    VARCHAR2(50),
+  email        VARCHAR2(100),
+  phone        VARCHAR2(15),
+  address      VARCHAR2(200),
+  dob          DATE,
+  kyc_status   VARCHAR2(20),
+  created_date DATE DEFAULT SYSDATE
 );
 
-CREATE TABLE transactions (
-  txn_id    NUMBER PRIMARY KEY,
-  acc_no    NUMBER,
-  txn_type  VARCHAR2(10),
-  amount    NUMBER,
-  txn_date  DATE
+-- 2. Accounts table
+CREATE TABLE accounts (
+  account_id   NUMBER PRIMARY KEY,
+  customer_id  NUMBER,
+  account_no   VARCHAR2(20) UNIQUE,
+  account_type VARCHAR2(20),
+  balance      NUMBER DEFAULT 0,
+  status       VARCHAR2(10),
+  open_date    DATE DEFAULT SYSDATE,
+  FOREIGN KEY (customer_id)
+  REFERENCES customers(customer_id)
 );
 
-CREATE TABLE balance_log (
-  log_id      NUMBER PRIMARY KEY,
-  acc_no      NUMBER,
-  old_balance NUMBER,
-  new_balance NUMBER,
-  updated_on  DATE
+-- 3. Transactions table
+CREATE TABLE transactions_table (
+  txn_id       NUMBER PRIMARY KEY,
+  account_id   NUMBER,
+  txn_type     VARCHAR2(10),
+  amount       NUMBER,
+  balance_after NUMBER,
+  txn_date     DATE DEFAULT SYSDATE,
+  channel      VARCHAR2(20),
+  status       VARCHAR2(10),
+  reference_no VARCHAR2(50)
 );
+
+-- 4. Loans table
+CREATE TABLE loans (
+  loan_id      NUMBER PRIMARY KEY,
+  customer_id  NUMBER,
+  loan_type    VARCHAR2(20),
+  amount       NUMBER,
+  interest_rate NUMBER,
+  tenure_months NUMBER,
+  emi_amount   NUMBER,
+  start_date   DATE,
+  end_date     DATE,
+  status       VARCHAR2(20),
+  FOREIGN KEY (customer_id)
+  REFERENCES customers(customer_id)
+);
+
+-- 5. NPA table
+CREATE TABLE npa_accounts (
+  npa_id       NUMBER PRIMARY KEY,
+  account_id   NUMBER,
+  loan_id      NUMBER,
+  overdue_days NUMBER,
+  overdue_amt  NUMBER,
+  npa_category VARCHAR2(20),
+  classified_date DATE,
+  status       VARCHAR2(20)
+);
+
+-- 6. Interest log
+CREATE TABLE interest_log (
+  log_id          NUMBER PRIMARY KEY,
+  account_id      NUMBER,
+  log_date        DATE,
+  balance         NUMBER,
+  rate            NUMBER,
+  daily_interest  NUMBER,
+  status          VARCHAR2(20),
+  applied_date    DATE
+);
+-- 7. Audit log table
+CREATE TABLE audit_log (
+  log_id       NUMBER PRIMARY KEY,
+  table_name   VARCHAR2(50),
+  operation    VARCHAR2(10),
+  old_value    VARCHAR2(4000),
+  new_value    VARCHAR2(4000),
+  changed_by   VARCHAR2(50),
+  changed_date DATE DEFAULT SYSDATE
+);
+
+-- 8. Interest rates table
+CREATE TABLE interest_rates (
+  rate_id      NUMBER PRIMARY KEY,
+  account_type VARCHAR2(20),
+  rate         NUMBER,
+  effective_from DATE,
+  effective_to   DATE
+);
+
