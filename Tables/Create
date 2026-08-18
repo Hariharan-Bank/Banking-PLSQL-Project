@@ -1,3 +1,15 @@
+
+-- ================================
+-- Project: Banking Management System
+-- Author: Hariharan B
+-- Date: July 2026
+-- Description: Create all tables
+-- ================================
+
+
+
+
+
 -- 1. Customers table
 CREATE TABLE customers (
   customer_id  NUMBER PRIMARY KEY,
