@@ -1,0 +1,491 @@
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Hariharan', 'B',
+'hariharan@gmail.com',
+'9876543210',
+'12 Anna Nagar Chennai 600040',
+TO_DATE('15-03-1995','DD-MM-YYYY'),
+'VERIFIED',
+SYSDATE);
+
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Priya', 'Krishnan',
+'priya.k@gmail.com',
+'9876543211',
+'45 T Nagar Chennai 600017',
+TO_DATE('22-07-1992','DD-MM-YYYY'),
+'VERIFIED',
+SYSDATE);
+
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Kumar', 'Selvam',
+'kumar.s@gmail.com',
+'9876543212',
+'78 Adyar Chennai 600020',
+TO_DATE('10-11-1988','DD-MM-YYYY'),
+'VERIFIED',
+SYSDATE);
+
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Meena', 'Sundaram',
+'meena.s@gmail.com',
+'9876543213',
+'23 Velachery Chennai 600042',
+TO_DATE('05-06-1990','DD-MM-YYYY'),
+'VERIFIED',
+SYSDATE);
+
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Raj', 'Mohan',
+'raj.m@gmail.com',
+'9876543214',
+'56 Porur Chennai 600116',
+TO_DATE('18-09-1985','DD-MM-YYYY'),
+'PENDING',
+SYSDATE);
+
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Kavitha', 'Rajan',
+'kavitha.r@gmail.com',
+'9876543215',
+'34 Tambaram Chennai 600045',
+TO_DATE('30-12-1993','DD-MM-YYYY'),
+'VERIFIED',
+SYSDATE);
+
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Suresh', 'Babu',
+'suresh.b@gmail.com',
+'9876543216',
+'89 Chromepet Chennai 600044',
+TO_DATE('14-04-1987','DD-MM-YYYY'),
+'VERIFIED',
+SYSDATE);
+
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Anitha', 'Devi',
+'anitha.d@gmail.com',
+'9876543217',
+'67 Sholinganallur Chennai 600119',
+TO_DATE('25-08-1991','DD-MM-YYYY'),
+'VERIFIED',
+SYSDATE);
+
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Vijay', 'Kumar',
+'vijay.k@gmail.com',
+'9876543218',
+'12 Perambur Chennai 600011',
+TO_DATE('08-02-1986','DD-MM-YYYY'),
+'PENDING',
+SYSDATE);
+
+INSERT INTO customers VALUES (
+customer_seq.NEXTVAL,
+'Lakshmi', 'Narayanan',
+'lakshmi.n@gmail.com',
+'9876543219',
+'45 Kodambakkam Chennai 600024',
+TO_DATE('19-05-1994','DD-MM-YYYY'),
+'VERIFIED',
+SYSDATE);
+
+COMMIT;
+
+
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1001,
+'ACC20260001',
+'SAVINGS',
+50000,
+'ACTIVE',
+SYSDATE - 365);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1001,
+'ACC20260002',
+'CURRENT',
+150000,
+'ACTIVE',
+SYSDATE - 300);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1002,
+'ACC20260003',
+'SAVINGS',
+75000,
+'ACTIVE',
+SYSDATE - 280);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1003,
+'ACC20260004',
+'SAVINGS',
+30000,
+'ACTIVE',
+SYSDATE - 250);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1003,
+'ACC20260005',
+'CURRENT',
+200000,
+'ACTIVE',
+SYSDATE - 200);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1004,
+'ACC20260006',
+'SAVINGS',
+10000,
+'INACTIVE',
+SYSDATE - 180);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1005,
+'ACC20260007',
+'SAVINGS',
+5000,
+'ACTIVE',
+SYSDATE - 150);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1006,
+'ACC20260008',
+'CURRENT',
+90000,
+'ACTIVE',
+SYSDATE - 120);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1007,
+'ACC20260009',
+'SAVINGS',
+45000,
+'ACTIVE',
+SYSDATE - 90);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1008,
+'ACC20260010',
+'SAVINGS',
+80000,
+'ACTIVE',
+SYSDATE - 60);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1009,
+'ACC20260011',
+'CURRENT',
+25000,
+'INACTIVE',
+SYSDATE - 30);
+
+INSERT INTO accounts VALUES (
+account_seq.NEXTVAL,
+1010,
+'ACC20260012',
+'SAVINGS',
+60000,
+'ACTIVE',
+SYSDATE - 10);
+
+COMMIT;
+
+
+
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2001,
+'CREDIT', 10000, 50000,
+SYSDATE - 30, 'NET_BANKING',
+'SUCCESS', 'REF001');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2001,
+'DEBIT', 5000, 45000,
+SYSDATE - 28, 'ATM',
+'SUCCESS', 'REF002');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2001,
+'CREDIT', 15000, 60000,
+SYSDATE - 25, 'NEFT',
+'SUCCESS', 'REF003');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2002,
+'CREDIT', 50000, 150000,
+SYSDATE - 20, 'RTGS',
+'SUCCESS', 'REF004');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2002,
+'DEBIT', 20000, 130000,
+SYSDATE - 18, 'NET_BANKING',
+'SUCCESS', 'REF005');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2003,
+'CREDIT', 25000, 75000,
+SYSDATE - 15, 'NEFT',
+'SUCCESS', 'REF006');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2003,
+'DEBIT', 10000, 65000,
+SYSDATE - 12, 'ATM',
+'SUCCESS', 'REF007');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2004,
+'CREDIT', 5000, 30000,
+SYSDATE - 10, 'UPI',
+'SUCCESS', 'REF008');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2005,
+'CREDIT', 200000, 200000,
+SYSDATE - 8, 'RTGS',
+'SUCCESS', 'REF009');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2005,
+'DEBIT', 50000, 150000,
+SYSDATE - 7, 'NET_BANKING',
+'SUCCESS', 'REF010');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2007,
+'CREDIT', 5000, 5000,
+SYSDATE - 6, 'UPI',
+'SUCCESS', 'REF011');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2008,
+'CREDIT', 30000, 90000,
+SYSDATE - 5, 'NEFT',
+'SUCCESS', 'REF012');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2009,
+'CREDIT', 45000, 45000,
+SYSDATE - 4, 'NET_BANKING',
+'SUCCESS', 'REF013');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2010,
+'CREDIT', 80000, 80000,
+SYSDATE - 3, 'RTGS',
+'SUCCESS', 'REF014');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2011,
+'CREDIT', 25000, 25000,
+SYSDATE - 2, 'NEFT',
+'SUCCESS', 'REF015');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2012,
+'CREDIT', 60000, 60000,
+SYSDATE - 1, 'NET_BANKING',
+'SUCCESS', 'REF016');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2001,
+'DEBIT', 2000, 58000,
+SYSDATE, 'ATM',
+'SUCCESS', 'REF017');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2003,
+'CREDIT', 5000, 70000,
+SYSDATE, 'UPI',
+'SUCCESS', 'REF018');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2008,
+'DEBIT', 15000, 75000,
+SYSDATE, 'NET_BANKING',
+'SUCCESS', 'REF019');
+
+INSERT INTO transactions_table VALUES (
+txn_seq.NEXTVAL, 2012,
+'CREDIT', 10000, 70000,
+SYSDATE, 'UPI',
+'SUCCESS', 'REF020');
+
+COMMIT;
+
+
+
+
+INSERT INTO loans VALUES (
+loan_seq.NEXTVAL,
+1001, 'HOME_LOAN',
+2000000, 8.5, 240,
+18500,
+SYSDATE - 400,
+SYSDATE + 7000,
+'ACTIVE');
+
+INSERT INTO loans VALUES (
+loan_seq.NEXTVAL,
+1002, 'PERSONAL_LOAN',
+500000, 12.5, 60,
+11200,
+SYSDATE - 200,
+SYSDATE + 1600,
+'ACTIVE');
+
+INSERT INTO loans VALUES (
+loan_seq.NEXTVAL,
+1003, 'CAR_LOAN',
+800000, 9.5, 84,
+11800,
+SYSDATE - 100,
+SYSDATE + 2432,
+'ACTIVE');
+
+INSERT INTO loans VALUES (
+loan_seq.NEXTVAL,
+1004, 'PERSONAL_LOAN',
+200000, 14.0, 36,
+6800,
+SYSDATE - 150,
+SYSDATE + 930,
+'OVERDUE');
+
+INSERT INTO loans VALUES (
+loan_seq.NEXTVAL,
+1005, 'HOME_LOAN',
+3000000, 8.0, 300,
+25000,
+SYSDATE - 500,
+SYSDATE + 8500,
+'ACTIVE');
+
+INSERT INTO loans VALUES (
+loan_seq.NEXTVAL,
+1006, 'EDUCATION_LOAN',
+400000, 10.5, 84,
+6200,
+SYSDATE - 300,
+SYSDATE + 2148,
+'ACTIVE');
+
+INSERT INTO loans VALUES (
+loan_seq.NEXTVAL,
+1007, 'PERSONAL_LOAN',
+150000, 15.0, 24,
+7200,
+SYSDATE - 200,
+SYSDATE + 520,
+'OVERDUE');
+
+INSERT INTO loans VALUES (
+loan_seq.NEXTVAL,
+1008, 'CAR_LOAN',
+600000, 9.0, 60,
+12500,
+SYSDATE - 50,
+SYSDATE + 1750,
+'ACTIVE');
+
+COMMIT;
+
+
+
+INSERT INTO npa_accounts VALUES (
+npa_seq.NEXTVAL,
+2006, 4004,
+150, 6800,
+'Sub Standard',
+SYSDATE - 60,
+'ACTIVE');
+
+INSERT INTO npa_accounts VALUES (
+npa_seq.NEXTVAL,
+2011, 4007,
+200, 7200,
+'Sub Standard',
+SYSDATE - 110,
+'ACTIVE');
+
+INSERT INTO npa_accounts VALUES (
+npa_seq.NEXTVAL,
+2007, NULL,
+400, 5000,
+'Doubtful',
+SYSDATE - 310,
+'ACTIVE');
+
+INSERT INTO npa_accounts VALUES (
+npa_seq.NEXTVAL,
+2006, 4004,
+730, 50000,
+'Loss Asset',
+SYSDATE - 640,
+'ACTIVE');
+
+COMMIT;
+
+
+
+INSERT INTO interest_rates VALUES (
+rate_seq.NEXTVAL,
+'SAVINGS', 4.0,
+TO_DATE('01-01-2026','DD-MM-YYYY'),
+TO_DATE('31-12-2026','DD-MM-YYYY'));
+
+INSERT INTO interest_rates VALUES (
+rate_seq.NEXTVAL,
+'CURRENT', 3.0,
+TO_DATE('01-01-2026','DD-MM-YYYY'),
+TO_DATE('31-12-2026','DD-MM-YYYY'));
+
+INSERT INTO interest_rates VALUES (
+rate_seq.NEXTVAL,
+'HOME_LOAN', 8.5,
+TO_DATE('01-01-2026','DD-MM-YYYY'),
+TO_DATE('31-12-2026','DD-MM-YYYY'));
+
+INSERT INTO interest_rates VALUES (
+rate_seq.NEXTVAL,
+'PERSONAL_LOAN', 12.5,
+TO_DATE('01-01-2026','DD-MM-YYYY'),
+TO_DATE('31-12-2026','DD-MM-YYYY'));
+
+INSERT INTO interest_rates VALUES (
+rate_seq.NEXTVAL,
+'CAR_LOAN', 9.5,
+TO_DATE('01-01-2026','DD-MM-YYYY'),
+TO_DATE('31-12-2026','DD-MM-YYYY'));
+
+INSERT INTO interest_rates VALUES (
+rate_seq.NEXTVAL,
+'EDUCATION_LOAN', 10.5,
+TO_DATE('01-01-2026','DD-MM-YYYY'),
+TO_DATE('31-12-2026','DD-MM-YYYY'));
+
+COMMIT;
